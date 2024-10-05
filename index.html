@@ -29,6 +29,7 @@
             width: 200px;
             text-align: center;
             transition: transform 0.2s;
+            cursor: pointer; /* 显示指针光标 */
         }
         .card:hover {
             transform: scale(1.05);
@@ -36,26 +37,28 @@
         a {
             text-decoration: none;
             color: #007BFF;
+            display: block; /* 使链接填满卡片 */
+            height: 100%; /* 确保链接填满卡片高度 */
         }
     </style>
 </head>
 <body>
     <h1>我的网址导航</h1>
     <div class="container">
-        <div class="card">
-            <h3><a href="https://www.baidu.com">百度</a></h3>
+        <div class="card" onclick="window.location='https://www.baidu.com';">
+            <h3>百度</h3>
         </div>
-        <div class="card">
-            <h3><a href="https://www.google.com">谷歌</a></h3>
+        <div class="card" onclick="window.location='https://www.google.com';">
+            <h3>谷歌</h3>
         </div>
-        <div class="card">
-            <h3><a href="https://www.github.com">GitHub</a></h3>
+        <div class="card" onclick="window.location='https://www.github.com';">
+            <h3>GitHub</h3>
         </div>
-        <div class="card">
-            <h3><a href="https://www.zhihu.com">知乎</a></h3>
+        <div class="card" onclick="window.location='https://www.zhihu.com';">
+            <h3>知乎</h3>
         </div>
-        <div class="card">
-            <h3><a href="https://www.taobao.com">淘宝</a></h3>
+        <div class="card" onclick="window.location='https://www.taobao.com';">
+            <h3>淘宝</h3>
         </div>
     </div>
 </body>
