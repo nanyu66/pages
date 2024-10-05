@@ -1,1 +1,62 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址导航</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>我的网址导航</h1>
+    <div class="container">
+        <div class="card">
+            <h3><a href="https://www.baidu.com">百度</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.google.com">谷歌</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.github.com">GitHub</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.zhihu.com">知乎</a></h3>
+        </div>
+        <div class="card">
+            <h3><a href="https://www.taobao.com">淘宝</a></h3>
+        </div>
+    </div>
+</body>
+</html>
