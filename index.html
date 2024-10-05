@@ -28,6 +28,7 @@
             padding: 20px;
             width: 200px;
             text-align: center;
+            position: relative;
             transition: transform 0.2s;
         }
         .card:hover {
@@ -37,26 +38,55 @@
             text-decoration: none;
             color: #007BFF;
         }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-link {
+            margin: 20px 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <h1>我的网址导航</h1>
-    <div class="container">
-        <div class="card">
-            <h3><a href="https://www.baidu.com">百度</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.google.com">谷歌</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.github.com">GitHub</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.zhihu.com">知乎</a></h3>
-        </div>
-        <div class="card">
-            <h3><a href="https://www.taobao.com">淘宝</a></h3>
-        </div>
+    <div class="add-link">
+        <input type="text" id="linkName" placeholder="链接名称" required>
+        <input type="text" id="linkUrl" placeholder="链接地址" required>
+        <button onclick="addLink()">添加链接</button>
     </div>
+    <div class="container" id="linkContainer"></div>
+
+    <script>
+        function addLink() {
+            const name = document.getElementById('linkName').value;
+            const url = document.getElementById('linkUrl').value;
+            if (name && url) {
+                const container = document.getElementById('linkContainer');
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3><a href="${url}" target="_blank">${name}</a></h3>
+                    <button class="delete-btn" onclick="deleteLink(this)">删除</button>
+                `;
+                container.appendChild(card);
+                document.getElementById('linkName').value = '';
+                document.getElementById('linkUrl').value = '';
+            } else {
+                alert('请填写链接名称和地址！');
+            }
+        }
+
+        function deleteLink(button) {
+            const card = button.parentElement;
+            card.remove();
+        }
+    </script>
 </body>
 </html>
